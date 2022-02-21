@@ -2,6 +2,7 @@ package com.thiago.core;
 
 import static org.testng.Assert.fail;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
@@ -16,6 +17,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.thiago.driver.TLDriverFactory;
@@ -185,6 +187,8 @@ public abstract class CorePage<T> {
 			Action dragAndDrop = null;
 			dragAndDrop = actions.clickAndHold(seguraClick).moveToElement(soltarClick).release().build();
 			dragAndDrop.perform();
+			WebDriverWait wait = new WebDriverWait(this.driver, LOAD_TIMEOUT);
+			wait.withTimeout(Duration.ofSeconds(2));
 	}
 	
 	public void moverCursorPara(WebElement elemento){
