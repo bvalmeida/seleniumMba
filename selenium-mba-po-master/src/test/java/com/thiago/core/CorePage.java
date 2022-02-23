@@ -183,12 +183,13 @@ public abstract class CorePage<T> {
 	}
 
 	public void arrastarAlgumaCoisa(WebElement seguraClick, WebElement soltarClick ){
+			WebDriverWait wait = new WebDriverWait(this.driver, LOAD_TIMEOUT);
+			wait.withTimeout(Duration.ofSeconds(1));
 			Actions actions = new Actions(this.driver);
 			Action dragAndDrop = null;
 			dragAndDrop = actions.clickAndHold(seguraClick).moveToElement(soltarClick).release().build();
 			dragAndDrop.perform();
-			WebDriverWait wait = new WebDriverWait(this.driver, LOAD_TIMEOUT);
-			wait.withTimeout(Duration.ofSeconds(2));
+
 	}
 	
 	public void moverCursorPara(WebElement elemento){
