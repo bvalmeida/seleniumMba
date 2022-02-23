@@ -3,7 +3,6 @@ package com.thiago.teste;
 import com.thiago.page.PageGuruRegister;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.thiago.core.InvokedMethodListener;
 import com.thiago.page.PageGuruHome;
  

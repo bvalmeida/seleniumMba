@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.thiago.core.CorePage;
 import com.thiago.driver.TLDriverFactory;
 
@@ -23,7 +22,6 @@ public class PageHomeTest extends CorePage<PageHomeTest>{
 	
 	@FindBy(name = "btnK")
 	private WebElement bntSearch2;
-	
 	
 	public void pesquisarNoGoogle() {
 		click(bntSearch);

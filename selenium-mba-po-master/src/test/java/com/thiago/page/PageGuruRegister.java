@@ -50,7 +50,7 @@ public class PageGuruRegister extends CorePage<PageGuruRegister> {
     @FindBy(xpath = "/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[17]/td/input")
     private WebElement send;
 
-//  CONFIRMAÇÃO
+//    CONFIRMAÇÃO
 
     @FindBy(xpath = "/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/p[1]/font/b")
     private WebElement nameRegister;
@@ -64,7 +64,7 @@ public class PageGuruRegister extends CorePage<PageGuruRegister> {
     @FindBy(xpath = "//*[@id=\"dismiss-button\"]/div/span")
     private WebElement ad;
 
-//  LOGIN
+//    LOGIN
 
     @FindBy(xpath = "/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[1]/td[2]/input")
     private WebElement userNameLogin;
@@ -94,13 +94,14 @@ public class PageGuruRegister extends CorePage<PageGuruRegister> {
         aguardarElementoClicado(send);
         click(send);
 
-        // Confirmação
+//        CONFIRMAÇÃO
 
         Assert.assertEquals(getTextElement(nameRegister), "Dear breno breno,");
         Assert.assertEquals(getTextElement(userNameConfirm), "Note: Your user name is breno.");
+        aguardarElementoClicado(signIn);
         click(signIn);
 
-        // Login
+//        LOGIN
 
         aguardarElementoVisivel(userNameLogin);
         preencherCampo(userNameLogin, element);
@@ -108,7 +109,7 @@ public class PageGuruRegister extends CorePage<PageGuruRegister> {
         aguardarElementoClicado(submitLogin);
         click(submitLogin);
 
-        // Confirmar login
+//        CONFIRMAR LOGIN
 
         aguardarElementoVisivel(confirmLogin);
         Assert.assertEquals(getTextElement(confirmLogin), "Login Successfully");
