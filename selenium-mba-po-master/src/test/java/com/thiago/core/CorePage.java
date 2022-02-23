@@ -183,11 +183,15 @@ public abstract class CorePage<T> {
 	}
 
 	public void arrastarAlgumaCoisa(WebElement seguraClick, WebElement soltarClick ){
-			aguardarElementoClicado(seguraClick);
 			Actions actions = new Actions(this.driver);
 			Action dragAndDrop = null;
 			dragAndDrop = actions.clickAndHold(seguraClick).moveToElement(soltarClick).release().build();
 			dragAndDrop.perform();
+			try{
+				Thread.sleep(1000);
+			} catch(InterruptedException ie) {
+
+			}
 	}
 	
 	public void moverCursorPara(WebElement elemento){
