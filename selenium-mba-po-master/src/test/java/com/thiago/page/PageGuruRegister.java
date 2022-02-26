@@ -35,6 +35,9 @@ public class PageGuruRegister extends CorePage<PageGuruRegister> {
     @FindBy(xpath = "/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[9]/td[2]/input")
     private WebElement stateProvince;
 
+    @FindBy(xpath = "/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[11]/td[2]/select")
+    private WebElement country;
+
     @FindBy(xpath = "/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[10]/td[2]/input")
     private WebElement postalCode;
 
@@ -88,6 +91,7 @@ public class PageGuruRegister extends CorePage<PageGuruRegister> {
         preencherCampo(city, element);
         preencherCampo(stateProvince, element);
         preencherCampo(postalCode, element);
+        selectElementByVisibleValue(country, "BRAZIL");
         preencherCampo(userName, element);
         preencherCampo(password, element);
         preencherCampo(confirmPassword, element);
